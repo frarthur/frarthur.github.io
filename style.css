@@ -7,6 +7,12 @@ body {
   background: #f4f4f4;
 }
 
+.language-switcher img {
+  width: 20px;
+  height: auto;
+}
+
+
 .container {
   width: 90%;
   max-width: 1000px;
