@@ -6,107 +6,157 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Arthur Fresse</title>
+    <link rel="stylesheet" href="styles.css">
+</head> -->
 <body>
     <div class="container">
-        <h1>Arthur Fresse</h1>
+        <div class="language-switcher">
+            <button onclick="switchLanguage('fr')"><img src="france-flag.png" alt="Français"></button>
+            <button onclick="switchLanguage('en')"><img src="uk-flag.png" alt="English"></button>
+        </div>
+        <h1 data-fr="Arthur Fresse" data-en="Arthur Fresse">Arthur Fresse</h1>
         <div class="contact-info">
-            <p>06 52 03 44 07 | fr.arthur@protonmail.com | Biarritz, France</p>
+            <p data-fr="06 52 03 44 07 | fr.arthur@protonmail.com | Biarritz, France" data-en="+33 652 034 407 | fr.arthur@protonmail.com | Biarritz, France">
+                06 52 03 44 07 | fr.arthur@protonmail.com | Biarritz, France
+            </p>
         </div>
 
         <div class="section">
-            <h2>Profil</h2>
-            <p>Étudiant ingénieur à l’ESTIA, j’étudie la technologie en lien avec l’industrie, dont notamment l’informatique, la conception, la mécanique, et l’électronique.</p>
+            <h2 data-fr="Profil" data-en="Profile">Profil</h2>
+            <p data-fr="Étudiant ingénieur à l’ESTIA, j’étudie la technologie en lien avec l’industrie, dont notamment l’informatique, la conception, la mécanique, et l’électronique."
+               data-en="Engineering student at ESTIA, studying technology related to industry, including computer science, design, mechanics, and electronics.">
+                Étudiant ingénieur à l’ESTIA, j’étudie la technologie en lien avec l’industrie, dont notamment l’informatique, la conception, la mécanique, et l’électronique.
+            </p>
         </div>
 
         <div class="section">
-            <h2>Expériences Professionnelles</h2>
+            <h2 data-fr="Expériences Professionnelles" data-en="Professional Experience">Expériences Professionnelles</h2>
 
-            <h3>Ingénieur Gestion de Projet / Amélioration Continue - Tom D’Aqui</h3>
-            <p>2023 - Aujourd’hui</p>
+            <h3 data-fr="Ingénieur Gestion de Projet / Amélioration Continue - Tom D’Aqui" data-en="Project Management / Continuous Improvement Engineer - Tom D’Aqui">
+                Ingénieur Gestion de Projet / Amélioration Continue - Tom D’Aqui
+            </h3>
+            <p data-fr="2023 - Aujourd’hui" data-en="2023 - Present">2023 - Aujourd’hui</p>
             <ul>
-                <li><strong>Développement d'applications :</strong> Conception initiale d'une application Android pour le suivi de production, suivie de sa refonte et amélioration sur Power Apps pour optimiser la gestion en ligne de production.</li>
-                <li><strong>Automatisation des processus de données :</strong> Création de scripts sophistiqués pour automatiser et faciliter la gestion des données pour Leancure, augmentant ainsi l'efficacité des processus.</li>
-                <li><strong>Développement et implémentation de formulaires dynamiques :</strong> Conception et mise en place de formulaires automatisés avec notifications par email via Power Automate pour signaler des incidents, assurant une gestion réactive et efficace des problèmes.</li>
-                <li><strong>Configuration d’environnements SharePoint :</strong> Mise en place et gestion d'environnements SharePoint pour organiser et faciliter l'accès aux données à travers divers services, améliorant la collaboration et la sécurité des informations.</li>
-                <li><strong>Optimisation des processus d'équipement :</strong> Élaboration des procédures de travail pour une laveuse de caisse, accompagnée de la formation des opérateurs, ce qui a conduit à une amélioration notable de l'efficacité opérationnelle.</li>
-                <li><strong>Formation sur la sécurité chimique :</strong> Création et animation d'un programme de formation sur l'utilisation sécurisée des produits chimiques, renforçant les compétences du personnel et assurant la conformité aux normes de sécurité.</li>
+                <li data-fr="<strong>Développement d'applications :</strong> Conception initiale d'une application Android pour le suivi de production, suivie de sa refonte et amélioration sur Power Apps pour optimiser la gestion en ligne de production."
+                    data-en="<strong>Application Development:</strong> Initial design of an Android app for production tracking, followed by its redesign and enhancement on Power Apps to optimize online production management.">
+                    <strong>Développement d'applications :</strong> Conception initiale d'une application Android pour le suivi de production, suivie de sa refonte et amélioration sur Power Apps pour optimiser la gestion en ligne de production.
+                </li>
+                <li data-fr="<strong>Automatisation des processus de données :</strong> Création de scripts sophistiqués pour automatiser et faciliter la gestion des données pour Leancure, augmentant ainsi l'efficacité des processus."
+                    data-en="<strong>Data Process Automation:</strong> Creation of sophisticated scripts to automate and facilitate data management for Leancure, thereby increasing process efficiency.">
+                    <strong>Automatisation des processus de données :</strong> Création de scripts sophistiqués pour automatiser et faciliter la gestion des données pour Leancure, augmentant ainsi l'efficacité des processus.
+                </li>
+                <li data-fr="<strong>Développement et implémentation de formulaires dynamiques :</strong> Conception et mise en place de formulaires automatisés avec notifications par email via Power Automate pour signaler des incidents, assurant une gestion réactive et efficace des problèmes."
+                    data-en="<strong>Dynamic Forms Development and Implementation:</strong> Design and implementation of automated forms with email notifications via Power Automate to report incidents, ensuring reactive and effective problem management.">
+                    <strong>Développement et implémentation de formulaires dynamiques :</strong> Conception et mise en place de formulaires automatisés avec notifications par email via Power Automate pour signaler des incidents, assurant une gestion réactive et efficace des problèmes.
+                </li>
+                <li data-fr="<strong>Configuration d’environnements SharePoint :</strong> Mise en place et gestion d'environnements SharePoint pour organiser et faciliter l'accès aux données à travers divers services, améliorant la collaboration et la sécurité des informations."
+                    data-en="<strong>SharePoint Environment Setup:</strong> Setting up and managing SharePoint environments to organize and facilitate access to data across various services, improving collaboration and information security.">
+                    <strong>Configuration d’environnements SharePoint :</strong> Mise en place et gestion d'environnements SharePoint pour organiser et faciliter l'accès aux données à travers divers services, améliorant la collaboration et la sécurité des informations.
+                </li>
+                <li data-fr="<strong>Optimisation des processus d'équipement :</strong> Élaboration des procédures de travail pour une laveuse de caisse, accompagnée de la formation des opérateurs, ce qui a conduit à une amélioration notable de l'efficacité opérationnelle."
+                    data-en="<strong>Equipment Process Optimization:</strong> Development of work procedures for a case washer, along with operator training, leading to a noticeable improvement in operational efficiency.">
+                    <strong>Optimisation des processus d'équipement :</strong> Élaboration des procédures de travail pour une laveuse de caisse, accompagnée de la formation des opérateurs, ce qui a conduit à une amélioration notable de l'efficacité opérationnelle.
+                </li>
+                <li data-fr="<strong>Formation sur la sécurité chimique :</strong> Création et animation d'un programme de formation sur l'utilisation sécurisée des produits chimiques, renforçant les compétences du personnel et assurant la conformité aux normes de sécurité."
+                    data-en="<strong>Chemical Safety Training:</strong> Creation and delivery of a training program on the safe use of chemicals, enhancing staff skills and ensuring compliance with safety standards.">
+                    <strong>Formation sur la sécurité chimique :</strong> Création et animation d'un programme de formation sur l'utilisation sécurisée des produits chimiques, renforçant les compétences du personnel et assurant la conformité aux normes de sécurité.
+                </li>
             </ul>
 
-            <h3>Technicien de Laboratoire - Ecolgen Université Charles de Prague</h3>
-            <p>2021</p>
+            <h3 data-fr="Technicien de Laboratoire - Ecolgen Université Charles de Prague" data-en="Laboratory Technician - Ecolgen Charles University Prague">
+                Technicien de Laboratoire - Ecolgen Université Charles de Prague
+            </h3>
+            <p data-fr="2021" data-en="2021">2021</p>
             <ul>
-                <li><strong>Analyse de données génomiques :</strong> Utilisation de logiciels spécialisés pour analyser les données de séquençage génomique. Interprétation des résultats pour identifier des anomalies génétiques et des marqueurs spécifiques.</li>
-                <li><strong>Maintenance et calibration d'équipements :</strong> Calibration régulière des instruments pour garantir la précision des mesures.</li>
+                <li data-fr="<strong>Analyse de données génomiques :</strong> Utilisation de logiciels spécialisés pour analyser les données de séquençage génomique. Interprétation des résultats pour identifier des anomalies génétiques et des marqueurs spécifiques."
+                    data-en="<strong>Genomic Data Analysis:</strong> Use of specialized software to analyze genomic sequencing data. Interpretation of results to identify genetic anomalies and specific markers.">
+                    <strong>Analyse de données génomiques :</strong> Utilisation de logiciels spécialisés pour analyser les données de séquençage génomique. Interprétation des résultats pour identifier des anomalies génétiques et des marqueurs spécifiques.
+                </li>
+                <li data-fr="<strong>Maintenance et calibration d'équipements :</strong> Calibration régulière des instruments pour garantir la précision des mesures."
+                    data-en="<strong>Equipment Maintenance and Calibration:</strong> Regular calibration of instruments to ensure measurement accuracy.">
+                    <strong>Maintenance et calibration d'équipements :</strong> Calibration régulière des instruments pour garantir la précision des mesures.
+                </li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Formation</h2>
-            <h3>Ingénieur Généraliste</h3>
-            <p>2023 - 2026, ESTIA ∙ Bidart</p>
+            <h2 data-fr="Formation" data-en="Education">Formation</h2>
+            <h3 data-fr="Ingénieur Généraliste" data-en="General Engineer">Ingénieur Généraliste</h3>
+            <p data-fr="2023 - 2026, ESTIA ∙ Bidart" data-en="2023 - 2026, ESTIA ∙ Bidart">2023 - 2026, ESTIA ∙ Bidart</p>
 
-            <h3>BTS ANABIOTEC</h3>
-            <p>2021 - 2023, LEGTA ∙ Blanquefort</p>
+            <h3 data-fr="BTS ANABIOTEC" data-en="BTS ANABIOTEC">BTS ANABIOTEC</h3>
+            <p data-fr="2021 - 2023, LEGTA ∙ Blanquefort" data-en="2021 - 2023, LEGTA ∙ Blanquefort">2021 - 2023, LEGTA ∙ Blanquefort</p>
 
-            <h3>BAC Science et Technologie de l’Agronomie du Vivant</h3>
-            <p>2019 - 2021, LEGTA ∙ Montagne-Saint-Émilion</p>
+            <h3 data-fr="BAC Science et Technologie de l’Agronomie du Vivant" data-en="Baccalaureate in Science and Technology of Living Agronomy">BAC Science et Technologie de l’Agronomie du Vivant</h3>
+            <p data-fr="2019 - 2021, LEGTA ∙ Montagne-Saint-Émilion" data-en="2019 - 2021, LEGTA ∙ Montagne-Saint-Émilion">2019 - 2021, LEGTA ∙ Montagne-Saint-Émilion</p>
         </div>
 
         <div class="section">
-            <h2>Compétences</h2>
+            <h2 data-fr="Compétences" data-en="Skills">Compétences</h2>
             <div class="skills">
                 <div>
-                    <h3>Très bonne connaissance</h3>
+                    <h3 data-fr="Très bonne connaissance" data-en="Very Good Knowledge">Très bonne connaissance</h3>
                     <ul>
-                        <li>HTML / CSS</li>
-                        <li>JavaScript</li>
-                        <li>C/C++</li>
+                        <li data-fr="HTML / CSS" data-en="HTML / CSS">HTML / CSS</li>
+                        <li data-fr="JavaScript" data-en="JavaScript">JavaScript</li>
+                        <li data-fr="C/C++" data-en="C/C++">C/C++</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Bonne connaissance</h3>
+                    <h3 data-fr="Bonne connaissance" data-en="Good Knowledge">Bonne connaissance</h3>
                     <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>VBA</li>
-                        <li>SQL / PHP</li>
+                        <li data-fr="Python" data-en="Python">Python</li>
+                        <li data-fr="Java" data-en="Java">Java</li>
+                        <li data-fr="VBA" data-en="VBA">VBA</li>
+                        <li data-fr="SQL / PHP" data-en="SQL / PHP">SQL / PHP</li>
                     </ul>
                 </div>
             </div>
             <div class="skills">
                 <div>
-                    <h3>Notions en</h3>
+                    <h3 data-fr="Notions en" data-en="Basic Knowledge of">Notions en</h3>
                     <ul>
-                        <li>Lua</li>
-                        <li>MATLAB</li>
-                        <li>Kotlin / Android Studio</li>
+                        <li data-fr="Lua" data-en="Lua">Lua</li>
+                        <li data-fr="MATLAB" data-en="MATLAB">MATLAB</li>
+                        <li data-fr="Kotlin / Android Studio" data-en="Kotlin / Android Studio">Kotlin / Android Studio</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Logiciels</h2>
+            <h2 data-fr="Logiciels" data-en="Software">Logiciels</h2>
             <ul>
-                <li>Suite Office 365</li>
-                <li>Simulation 3D (ANSYS Workbench)</li>
-                <li>Électronique (Simulink, NI Multisim)</li>
-                <li>Conception 3D (Fusion 360, Onshape)</li>
+                <li data-fr="Suite Office 365" data-en="Office 365 Suite">Suite Office 365</li>
+                <li data-fr="Simulation 3D (ANSYS Workbench)" data-en="3D Simulation (ANSYS Workbench)">Simulation 3D (ANSYS Workbench)</li>
+                <li data-fr="Électronique (Simulink, NI Multisim)" data-en="Electronics (Simulink, NI Multisim)">Électronique (Simulink, NI Multisim)</li>
+                <li data-fr="Conception 3D (Fusion 360, Onshape)" data-en="3D Design (Fusion 360, Onshape)">Conception 3D (Fusion 360, Onshape)</li>
             </ul>
         </div>
 
         <div class="section">
-            <h2>Langues</h2>
+            <h2 data-fr="Langues" data-en="Languages">Langues</h2>
             <div class="languages">
                 <div>
-                    <p><strong>Français :</strong> Langue maternelle</p>
+                    <p data-fr="<strong>Français :</strong> Langue maternelle" data-en="<strong>French:</strong> Native Language">
+                        <strong>Français :</strong> Langue maternelle
+                    </p>
                 </div>
                 <div>
-                    <p><strong>Anglais :</strong> Bon niveau</p>
+                    <p data-fr="<strong>Anglais :</strong> Bon niveau" data-en="<strong>English:</strong> Good Level">
+                        <strong>Anglais :</strong> Bon niveau
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
