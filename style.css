@@ -1,18 +1,97 @@
-body{
-    background-color: #d9e7f2;
-    color: #1c94f5;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
 }
-h1{
 
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h2 {
-    text-align: center;
-    font-size: 70px;
-    color: #04c2d7;
-  }
-  
-p {
-    text-align: center;
-    font-size: 20px;
-    color: ;
-  }
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #34495e;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section h2 {
+  background: #e74c3c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.section h3 {
+  color: #e74c3c;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.section p, .section ul {
+  color: #555;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+.section ul li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 8px;
+}
+
+.skills, .languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills div, .languages div {
+  flex: 1 1 calc(50% - 20px);
+  background: #ecf0f1;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.skills h3, .languages p {
+  margin-top: 0;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills ul li {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding: 8px;
+}
+
+.languages p {
+  margin: 0;
+}
