@@ -1,0 +1,101 @@
+/* Skills and Languages */
+.skills, .languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills div, .languages div {
+  flex: 1 1 calc(50% - 20px);
+  background: #ecf0f1;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills div:hover, .languages div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skills h3, .languages p {
+  margin-top: 0;
+}
+
+.skills ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 30px;
+}
+
+.skills ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+[data-fr="Python"]:before {
+  background-image: url("../img/logo_python.png");
+}
+
+[data-fr="Python"]:hover::after {
+  content: "Librairies: PyTorch, NumPy, Pandas, Matplotlib, OpenAI";
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+[data-fr="Java"]:before {
+  background-image: url("../img/logo_java.png");
+}
+
+[data-fr="JavaScript"]:before {
+  background-image: url("../img/logo_js.png");
+}
+
+[data-fr="HTML / CSS"]:before {
+  background-image: url("../img/logo_htmlcss.png");
+}
+
+[data-fr="C/C++"]:before {
+  background-image: url("../img/logo_c.png");
+}
+
+[data-fr="VBA"]:before {
+  background-image: url("../img/logo_visual.png");
+}
+
+[data-fr="SQL / PHP"]:before {
+  background-image: url("../img/logo_slqphp.png");
+}
+
+[data-fr="C#"]:before {
+  background-image: url("../img/logo_cs.png");
+}
+
+[data-fr="Kotlin / Android Studio"]:before {
+  background-image: url("../img/logo_AndroidStudio.png");
+}
+
+[data-fr="Lua"]:before {
+  background-image: url("../img/logo_lua.png");
+}
+
+[data-fr="MATLAB"]:before {
+  background-image: url("../img/logo_MATLAB.png");
+}
