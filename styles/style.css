@@ -7,10 +7,31 @@ body {
   background: #f4f4f4;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .language-switcher img {
   width: 20px;
   height: auto;
 }
+
+.link img {
+  float: right;
+}
+
+.language-switcher,
+.link {
+  display: flex;
+  gap: 10px; /* Espace entre les boutons ou les liens */
+}
+
+.link {
+  margin-right: 20px; /* Optionnel, ajuste la distance par rapport au bord droit */
+}
+
 
 
 .container {
