@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plateforme de Fournisseurs Locaux Durables</title>
+    <title>Local Sustainable Suppliers Platform</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         body {
@@ -17,6 +17,17 @@
             color: white;
             padding: 15px;
             text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
         }
         .map-container {
             display: flex;
@@ -68,114 +79,122 @@
 <body>
 
 <header>
-    <h1>Plateforme de Fournisseurs Locaux Durables</h1>
-    <p>Aide les petites entreprises à devenir plus efficaces et durables</p>
+    <h1>European Circular Economy Ecosystem: Together We Are Stronger and Greener</h1>
+    <h1>Local Sustainable Suppliers Platform</h1>
+    <p>Helping small businesses become more efficient and sustainable</p>
 </header>
+
+<nav>
+    <a href="#actuality">News</a>
+    <a href="#partners">Partners</a>
+    <a href="#resources">Resources</a>
+    <a href="#ongoing-projects">Ongoing Projects</a>
+    <a href="#About-Us">About Us</a>
+    <a href="#Contact-Us">Contact Us</a>
+</nav>
 
 <div class="map-container">
     <div id="map"></div>
 </div>
 
-<section class="category-section">
-    <div class="category">
-        <h3>Fournisseurs d'Énergie</h3>
-        <ul>
-            <li>Fournisseur 1 - Énergie verte</li>
-            <li>Fournisseur 2 - Énergie renouvelable</li>
-            <li>Fournisseur 3 - Solutions d'énergie locale</li>
-        </ul>
-    </div>
-    <div class="category">
-        <h3>Transporteurs Écoresponsables</h3>
-        <ul>
-            <li>Transporteur 1 - Transport électrique</li>
-            <li>Transporteur 2 - Carburants écologiques</li>
-            <li>Transporteur 3 - Solutions de transport local</li>
-        </ul>
-    </div>
-    <div class="category">
-        <h3>Équipements Écologiques</h3>
-        <ul>
-            <li>Équipement 1 - Économies d'énergie</li>
-            <li>Équipement 2 - Équipements à faible empreinte carbone</li>
-            <li>Équipement 3 - Solutions durables</li>
-        </ul>
-    </div>
-    <div class="category">
-        <h3>Gestion des Déchets</h3>
-        <ul>
-            <li>Service 1 - Recyclage local</li>
-            <li>Service 2 - Compostage industriel</li>
-            <li>Service 3 - Gestion des déchets organiques</li>
-        </ul>
+<section id="results" style="padding: 20px; background: #fff; margin: 20px; border-radius: 8px;">
+    <h2 id="country-name">Click on a country</h2>
+    <div id="country-data">
+        <!-- Data will be dynamically inserted here -->
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2024 Plateforme de Fournisseurs Locaux Durables</p>
+    <p>&copy; 2024 Local Sustainable Suppliers Platform</p>
 </footer>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    // Initialisation de la carte
+    // Map initialization
     const map = L.map('map').setView([46.603354, 1.888334], 5);
 
-    // Ajout de la couche de tuiles
+    // Add tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Chargement des données JSON
-    let countryData = {};
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => countryData = data)
-        .catch(error => console.error('Erreur de chargement des données:', error));
+    // Ajout d'un thème noir et blanc (CartoDB positron)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &amp; <a href="https://carto.com/attributions">CartoDB</a>'
+    }).addTo(map);
 
-    // Mise à jour des données affichées
+    // Load JSON data
+    let countryData = {};
+    fetch('data.json')  // Assure-toi que le chemin est correct ici
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load JSON data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            countryData = data;
+        })
+        .catch(error => {
+            console.error('Data loading error:', error);
+            alert('There was an error loading the data. Please check the console for details.');
+        });
+
+    // Update displayed data
     function updateCountryData(country) {
         const results = document.getElementById("results");
         const countryName = document.getElementById("country-name");
         const countryContent = document.getElementById("country-data");
 
         if (countryData[country]) {
-            countryName.textContent = `Informations pour ${country}`;
-            const { Fournisseurs, Transporteurs, Équipements, GestionDesDéchets } = countryData[country];
+            countryName.textContent = `Information for ${country}`;
+            const { Suppliers, Transporters, WasteManagement, Agriculture, HowTo } = countryData[country];
 
             countryContent.innerHTML = `
-                <h3>Fournisseurs</h3><ul>${Fournisseurs.map(f => `<li>${f}</li>`).join('')}</ul>
-                <h3>Transporteurs</h3><ul>${Transporteurs.map(t => `<li>${t}</li>`).join('')}</ul>
-                <h3>Équipements</h3><ul>${Équipements.map(e => `<li>${e}</li>`).join('')}</ul>
-                <h3>Gestion des Déchets</h3><ul>${GestionDesDéchets.map(d => `<li>${d}</li>`).join('')}</ul>
+                <section class="category-section">
+                    <div class="category">
+                        <h3>Suppliers</h3><ul>${Suppliers.map(f => `<li>${f}</li>`).join('')}</ul>
+                    </div>
+                    <div class="category">
+                        <h3>Transporters</h3><ul>${Transporters.map(t => `<li>${t}</li>`).join('')}</ul>
+                    </div>
+                    <div class="category">
+                        <h3>Waste Management</h3><ul>${WasteManagement.map(e => `<li>${e}</li>`).join('')}</ul>
+                    </div>
+                    <div class="category">
+                        <h3>Agriculture</h3><ul>${Agriculture.map(d => `<li>${d}</li>`).join('')}</ul>
+                    </div>
+                    <div class="category">
+                        <h3>HowTo</h3><ul>${HowTo.map(d => `<li>${d}</li>`).join('')}</ul>
+                    </div>
+                </section>
             `;
         } else {
-            countryName.textContent = `Aucune donnée pour ${country}`;
+            countryName.textContent = `No data for ${country}`;
             countryContent.innerHTML = '';
         }
     }
 
-    // Ajout des interactions avec la carte
+    // Add map interactions with green markers
     const countries = {
         "France": [46.603354, 1.888334],
-        "Espagne": [40.463667, -3.74922],
-        "Finlande": [61.92411, 25.748151],
-        "Grèce": [39.074208, 21.824312]
+        "Spain": [40.463667, -3.74922],
+        "Finland": [61.92411, 25.748151],
+        "Greece": [39.074208, 21.824312]
     };
 
     Object.keys(countries).forEach(country => {
         const [lat, lng] = countries[country];
-        L.marker([lat, lng]).addTo(map)
+        L.circleMarker([lat, lng], {
+            color: 'green', // Make the marker green
+            radius: 15,      // Adjust the size of the marker
+            weight: 2,      // Border thickness
+            fillOpacity: 0.7 // Opacity of the marker fill
+        }).addTo(map)
             .bindPopup(country)
             .on('click', () => updateCountryData(country));
     });
 </script>
-
-<section id="results" style="padding: 20px; background: #fff; margin: 20px; border-radius: 8px;">
-    <h2 id="country-name">Cliquez sur un pays</h2>
-    <div id="country-data">
-        <!-- Les données seront insérées ici dynamiquement -->
-    </div>
-</section>
 
 </body>
 </html>

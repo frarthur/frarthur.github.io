@@ -1,0 +1,33 @@
+{
+    "France": {
+        "Suppliers": ["Schneider energetics", "Le prêt Eco-Energie (PEE)", "ADEME"],
+        "Building": ["The GOCAP company", "ENOWO company"],
+        "Transporters": [],
+        "WasteManagement": ["Local Recycling", "Industrial Composting", "Organic Waste Solutions"],
+        "Agriculture": ["Organic Farming", "Local Produce", "Sustainable Agriculture"],
+        "HowTo": ["Energy Saving Tips", "Eco-friendly Living", "Sustainable Solutions"]
+        
+    },
+    "Spain": {
+        "Suppliers": ["IDAE stands", "Ecoembes"],
+        "Transporters": ["Biofuel Logistics", "Electric Bikes", "Eco Trucks"],
+        "WasteManagement": ["City Recycling", "Compost Services", "Organic Waste Management"],
+        "Agriculture": ["Sustainable Farming", "Local Produce", "Eco-friendly Agriculture"],
+        "HowTo": ["Eco-friendly Living", "Sustainable Solutions", "Energy Saving Tips"]
+        
+    },
+    "Finland": {
+        "Suppliers": ["Eneco","Vestas"],
+        "Transporters": ["Eco Boats", "Electric Buses", "Zero Carbon Transport"],
+        "WasteManagement": ["Recycling Plants", "Biodegradable Solutions", "Composting Initiatives"],
+        "Agriculture": ["Organic Farming", "Local Produce", "Sustainable Agriculture"],
+        "HowTo": ["Energy Saving Tips", "Eco-friendly Living", "Sustainable Solutions"]
+    },
+    "Greece": {
+        "Suppliers": ["Solar Islands", "Windmills Co.", "Energy Transition Ltd."],
+        "Transporters": ["Hybrid Cars", "Eco Maritime Solutions", "Local Transport"],
+        "WasteManagement": ["Beach Cleaning Services", "Plastic Recycling", "Composting Solutions"],
+        "Agriculture": ["Organic Farming", "Local Produce", "Sustainable Agriculture"],
+        "HowTo": ["Energy Saving Tips", "Eco-friendly Living", "Sustainable Solutions"]
+    }
+}
