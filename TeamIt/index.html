@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Fournisseurs Locaux Durables</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .map-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        #map {
+            width: 60%;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .category-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .category {
+            width: 22%;
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+        }
+        .category h3 {
+            color: #28a745;
+        }
+        .category ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .category ul li {
+            padding: 5px 0;
+            color: #555;
+        }
+        footer {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Plateforme de Fournisseurs Locaux Durables</h1>
+    <p>Aide les petites entreprises à devenir plus efficaces et durables</p>
+</header>
+
+<div class="map-container">
+    <div id="map"></div>
+</div>
+
+<section class="category-section">
+    <div class="category">
+        <h3>Fournisseurs d'Énergie</h3>
+        <ul>
+            <li>Fournisseur 1 - Énergie verte</li>
+            <li>Fournisseur 2 - Énergie renouvelable</li>
+            <li>Fournisseur 3 - Solutions d'énergie locale</li>
+        </ul>
+    </div>
+    <div class="category">
+        <h3>Transporteurs Écoresponsables</h3>
+        <ul>
+            <li>Transporteur 1 - Transport électrique</li>
+            <li>Transporteur 2 - Carburants écologiques</li>
+            <li>Transporteur 3 - Solutions de transport local</li>
+        </ul>
+    </div>
+    <div class="category">
+        <h3>Équipements Écologiques</h3>
+        <ul>
+            <li>Équipement 1 - Économies d'énergie</li>
+            <li>Équipement 2 - Équipements à faible empreinte carbone</li>
+            <li>Équipement 3 - Solutions durables</li>
+        </ul>
+    </div>
+    <div class="category">
+        <h3>Gestion des Déchets</h3>
+        <ul>
+            <li>Service 1 - Recyclage local</li>
+            <li>Service 2 - Compostage industriel</li>
+            <li>Service 3 - Gestion des déchets organiques</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Plateforme de Fournisseurs Locaux Durables</p>
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialisation de la carte
+    const map = L.map('map').setView([46.603354, 1.888334], 5);
+
+    // Ajout de la couche de tuiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Chargement des données JSON
+    let countryData = {};
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => countryData = data)
+        .catch(error => console.error('Erreur de chargement des données:', error));
+
+    // Mise à jour des données affichées
+    function updateCountryData(country) {
+        const results = document.getElementById("results");
+        const countryName = document.getElementById("country-name");
+        const countryContent = document.getElementById("country-data");
+
+        if (countryData[country]) {
+            countryName.textContent = `Informations pour ${country}`;
+            const { Fournisseurs, Transporteurs, Équipements, GestionDesDéchets } = countryData[country];
+
+            countryContent.innerHTML = `
+                <h3>Fournisseurs</h3><ul>${Fournisseurs.map(f => `<li>${f}</li>`).join('')}</ul>
+                <h3>Transporteurs</h3><ul>${Transporteurs.map(t => `<li>${t}</li>`).join('')}</ul>
+                <h3>Équipements</h3><ul>${Équipements.map(e => `<li>${e}</li>`).join('')}</ul>
+                <h3>Gestion des Déchets</h3><ul>${GestionDesDéchets.map(d => `<li>${d}</li>`).join('')}</ul>
+            `;
+        } else {
+            countryName.textContent = `Aucune donnée pour ${country}`;
+            countryContent.innerHTML = '';
+        }
+    }
+
+    // Ajout des interactions avec la carte
+    const countries = {
+        "France": [46.603354, 1.888334],
+        "Espagne": [40.463667, -3.74922],
+        "Finlande": [61.92411, 25.748151],
+        "Grèce": [39.074208, 21.824312]
+    };
+
+    Object.keys(countries).forEach(country => {
+        const [lat, lng] = countries[country];
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup(country)
+            .on('click', () => updateCountryData(country));
+    });
+</script>
+
+<section id="results" style="padding: 20px; background: #fff; margin: 20px; border-radius: 8px;">
+    <h2 id="country-name">Cliquez sur un pays</h2>
+    <div id="country-data">
+        <!-- Les données seront insérées ici dynamiquement -->
+    </div>
+</section>
+
+</body>
+</html>
