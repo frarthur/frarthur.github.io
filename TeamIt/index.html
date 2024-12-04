@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>European Circular Economy Ecosystem</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <link rel="icon" type="image/x-icon" href="logo(1).ico">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             padding: 0;
         }
         header {
-            background-color: #28a745;
+            background-color: #6AA84F;
             color: white;
             padding: 15px;
             text-align: center;
@@ -63,7 +63,7 @@
             border-radius: 8px;
         }
         .category h3 {
-            color: #28a745;
+            color: #6AA84F;
         }
         .category ul {
             list-style-type: none;
@@ -74,7 +74,7 @@
             color: #555;
         }
         footer {
-            background-color: #28a745;
+            background-color: #6AA84F;
             color: white;
             text-align: center;
             /* padding: 10px; */
@@ -88,7 +88,7 @@
 
 <header>
     <div class="firstline">
-        <img src="logo.jpg" alt="Local Sustainable Suppliers Platform" width="100" height="100">
+        <img src="logo.png" alt="Local Sustainable Suppliers Platform" width="100" height="100">
         <h1>European Circular Economy Ecosystem</h1>
     </div>
     <div class="secondline">
@@ -199,7 +199,7 @@
     Object.keys(countries).forEach(country => {
         const [lat, lng] = countries[country];
         L.circleMarker([lat, lng], {
-            color: 'green', // Make the marker green
+            color: '#6AA84F', // Make the marker green
             radius: 15,      // Adjust the size of the marker
             weight: 2,      // Border thickness
             fillOpacity: 0.7 // Opacity of the marker fill
