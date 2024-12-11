@@ -1,10 +1,19 @@
+:root {
+  --main-color: #2D2D2D;
+  --secondary-color: #6e82ae;
+  --background-color: #FFF;
+  --text-color: #2C3E50;
+}
+
 /* Global Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Source Code Pro', monospace; */
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  /* background: #f4f4f4; */
+  background: var(--background-color);
 }
 
 .header {
@@ -39,7 +48,7 @@ body {
   max-width: 1000px;
   margin: 20px auto;
   padding: 20px;
-  background: #fff;
+  background: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   animation: fadeIn 1.5s ease-out;
@@ -48,7 +57,7 @@ body {
 /* Header */
 h1 {
   text-align: center;
-  color: #2c3e50;
+  color: var(--main-color);
   margin-bottom: 10px;
   animation: slideInFromTop 1s ease-out;
 }
@@ -57,7 +66,7 @@ h1 {
 .contact-info {
   text-align: center;
   margin-bottom: 30px;
-  color: #34495e;
+  color: var(--text-color);
 }
 
 /* Section Styles */
@@ -67,7 +76,7 @@ h1 {
 }
 
 .section h2 {
-  background: #e74c3c;
+  background: var(--secondary-color);
   color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -89,7 +98,7 @@ h1 {
 }
 
 .section h3 {
-  color: #e74c3c;
+  color: var(--secondary-color);
   font-size: 1.1em;
   margin: 10px 0;
 }
