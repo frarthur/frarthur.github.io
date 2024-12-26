@@ -133,6 +133,27 @@ h1 {
   color: #777;
 }
 
+.tooltipTeamIt {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltipTeamIt .tooltiptextTeamIt {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute; 
+  z-index: 1; 
+}
+
+.tooltipTeamIt:hover .tooltiptextTeamIt {
+  visibility: visible;
+}
+
 /* Keyframes for Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
