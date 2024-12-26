@@ -1,3 +1,7 @@
+*{
+  list-style-type: none;
+}
+
 :root {
   --main-color: #2D2D2D;
   --secondary-color: #6e82ae;
@@ -120,6 +124,13 @@ h1 {
 .section ul li:hover {
   background: #eaf2f8;
   transform: scale(1.02);
+}
+
+.date{
+  /* font-size: 0.9em; */
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #777;
 }
 
 /* Keyframes for Animations */

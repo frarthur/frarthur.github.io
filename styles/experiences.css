@@ -1,0 +1,36 @@
+.experience-title {
+  position: relative; /* Nécessaire pour positionner correctement l'icône */
+  padding-left: 70px; /* Ajuste cette valeur selon la taille du logo + l'espace souhaité */
+}
+
+.experience-title:before {
+  content: "";
+  position: absolute;
+  left: 0; /* Positionne directement au bord gauche du h3 */
+  top: 35%; /* Commence à la moitié de la hauteur du h3 */
+  width: 60px; /* Ajuste la taille du logo ici */
+  height: 20px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Ajoute ici les images correspondantes */
+[data-fr="Campagne Playdorie - Ambassadeur TeamIt+"]:before {
+    background-image: url("../img/logo_teamit.png");
+}
+
+[data-fr="Hackathon - Chanel Mode"]:before {
+    background-image: url("../img/logo_chanelMode.png");
+}
+
+[data-fr="24 heures de l'innovation au Centre de la Terre - PAU"]:before {
+    background-image: url("../img/logo_avenia24h.png");
+    top : 25%;
+}
+
+[data-fr="24 heures de l'innovation pour la planète - ESTIA"]:before {
+    background-image: url("../img/logo_24h.png");
+}
+
+
