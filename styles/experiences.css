@@ -7,7 +7,7 @@
   content: "";
   position: absolute;
   left: 0; /* Positionne directement au bord gauche du h3 */
-  top: 35%; /* Commence à la moitié de la hauteur du h3 */
+  /* top : 30%; */
   width: 60px; /* Ajuste la taille du logo ici */
   height: 20px;
   
@@ -16,21 +16,33 @@
 }
 
 /* Ajoute ici les images correspondantes */
+[data-fr="Ingénieur Gestion de Projet / Amélioration Continue - Tom D’Aqui"]:before {
+  background-image: url("../img/logo_TomDaqui.png");
+  top: 15%;
+}
+
+[data-fr="Technicien de Laboratoire - Ecolgen Université Charles de Prague"]:before {
+  background-image: url("../img/logo_CharlesUniversity.png");
+  top: 10%;
+}
+
 [data-fr="Campagne Playdorie - Ambassadeur TeamIt+"]:before {
     background-image: url("../img/logo_teamit.png");
+    top: 38%;
 }
 
 [data-fr="Hackathon - Chanel Mode"]:before {
     background-image: url("../img/logo_chanelMode.png");
+    top: 25%;
+}
+
+[data-fr="24 heures de l'innovation pour la planète - ESTIA"]:before {
+  background-image: url("../img/logo_24h.png");
+  top: 25%;
 }
 
 [data-fr="24 heures de l'innovation au Centre de la Terre - PAU"]:before {
     background-image: url("../img/logo_avenia24h.png");
     top : 25%;
 }
-
-[data-fr="24 heures de l'innovation pour la planète - ESTIA"]:before {
-    background-image: url("../img/logo_24h.png");
-}
-
 
