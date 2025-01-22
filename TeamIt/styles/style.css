@@ -1,0 +1,52 @@
+/* Global Styles */
+
+/*
+body 
+header
+nav
+footer
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6AA84F;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header .firstline {
+    border-radius: 50%;
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #6AA84F;
+    color: white;
+    text-align: center;
+    /* padding: 10px; */
+    position: fixed;    
+    width: 100%;
+    bottom: 0;
+}
